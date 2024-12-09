@@ -3,92 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration Form</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Fetch API Example</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-100 to-purple-200 min-h-screen flex items-center justify-center">
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    <!-- Form Container -->
-    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-3xl">
-        <!-- Header -->
-        <h1 class="text-4xl font-extrabold text-center text-blue-600 mb-8">Student Registration Form</h1>
+    <!-- Container Utama -->
+    <div class="container mx-auto mt-10 p-5">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-5">Fetch Data API Example</h1>
+        
+        <!-- Loader -->
+        <div id="loader" class="text-center">
+            <p class="text-gray-500">Loading...</p>
+        </div>
 
-        <!-- Form -->
-        <form class="space-y-6">
-            <!-- Full Name -->
+        <!-- Data Card -->
+        <div id="data-container" class="hidden bg-white p-5 rounded-lg shadow-lg">
+            <h2 id="post-title" class="text-2xl font-semibold text-gray-800 mb-3"></h2>
+            <p id="post-body" class="text-gray-600 mb-5"></p>
             <div>
-                <label class="block font-semibold text-gray-700 mb-1">Full Name</label>
-                <input type="text" placeholder="Enter your full name" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                    Post ID: <span id="post-id"></span>
+                </span>
             </div>
+        </div>
 
-            <!-- Student ID -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Student ID (NIM)</label>
-                <input type="text" placeholder="Enter your student ID" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Email -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Email Address</label>
-                <input type="email" placeholder="Enter your email" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Faculty/Major -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Faculty/Major</label>
-                <select class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option>Science</option>
-                    <option>Technology</option>
-                    <option>Engineering</option>
-                    <option>Mathematics</option>
-                </select>
-            </div>
-
-            <!-- Date of Birth -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Date of Birth</label>
-                <input type="date" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Gender -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Gender</label>
-                <div class="flex items-center space-x-6">
-                    <label class="flex items-center">
-                        <input type="radio" name="gender" value="Male" class="text-blue-500">
-                        <span class="ml-2">Male</span>
-                    </label>
-                    <label class="flex items-center">
-                        <input type="radio" name="gender" value="Female" class="text-blue-500">
-                        <span class="ml-2">Female</span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Address -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Address</label>
-                <textarea placeholder="Enter your address" rows="3" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            </div>
-
-            <!-- Phone Number -->
-            <div>
-                <label class="block font-semibold text-gray-700 mb-1">Phone Number</label>
-                <input type="tel" placeholder="Enter your phone number" class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <!-- Buttons -->
-            <div class="flex items-center justify-end space-x-4">
-                <button type="reset" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-300">
-                    Reset
-                </button>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
-                    Submit
-                </button>
-            </div>
-        </form>
+        <!-- Error Message -->
+        <div id="error" class="hidden text-center text-red-500 font-semibold">
+            Failed to fetch data. Please try again later.
+        </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const postId = 12; // Gantilah dengan dua digit terakhir NIM Anda
+            const apiUrl = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+
+            const loader = document.getElementById("loader");
+            const dataContainer = document.getElementById("data-container");
+            const errorContainer = document.getElementById("error");
+
+            // Fetch data dari API
+            fetch(apiUrl)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    // Sembunyikan loader
+                    loader.classList.add("hidden");
+
+                    // Tampilkan data
+                    document.getElementById("post-id").innerText = data.id;
+                    document.getElementById("post-title").innerText = data.title;
+                    document.getElementById("post-body").innerText = data.body;
+
+                    // Tampilkan container data
+                    dataContainer.classList.remove("hidden");
+                })
+                .catch((error) => {
+                    console.error("Fetch error:", error);
+                    loader.classList.add("hidden");
+                    errorContainer.classList.remove("hidden");
+                });
+        });
+    </script>
 </body>
 </html>

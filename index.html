@@ -21,44 +21,46 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gradient-to-br from-white via-blue-100 to-purple-100 font-sans">
-    <div class="container mx-auto max-w-6xl px-5 text-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <!-- Navigation Links -->
-        <div class="flex justify-center gap-8 my-4">
-            <a href="biodata.html" class="text-blue-500 hover:text-blue-700 font-medium">Biodata Page</a>
-            <a href="contact_us.html" class="text-blue-500 hover:text-blue-700 font-medium">Contact Us Page</a>
-            <a href="posts.html" class="text-blue-500 hover:text-blue-700 font-medium">Additional Page</a>
-            <a href="freepage.html" class="text-blue-500 hover:text-blue-700 font-medium">Free Content Page</a>
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-8 my-4 text-center">
+            <a href="biodata.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Biodata</a>
+            <a href="contact_us.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Contact Us</a>
+            <a href="posts.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Additional Page</a>
+            <a href="freepage.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Free Content</a>
         </div>
 
         <!-- Title Section -->
-        <div class="my-10">
-            <h1 class="text-4xl font-medium text-gray-800">
+        <div class="my-8 text-center">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800">
                 One <span class="text-blue-500">Account</span> for all
             </h1>
-            <p class="text-4xl font-medium text-gray-800">your HoYoverse needs</p>
+            <p class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800 mt-2">your HoYoverse needs</p>
         </div>
 
         <!-- Login Button -->
-        <button id="openModal" class="bg-blue-500 text-white px-6 py-3 rounded-md font-medium my-5">Log In →</button>
+        <div class="flex justify-center my-5">
+            <button id="openModal" class="bg-blue-500 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-600 transition-colors">Log In →</button>
+        </div>
 
         <!-- Features Section -->
-        <div class="flex justify-center gap-8 my-10 px-5 flex-col lg:flex-row">
-            <div class="bg-white/90 p-8 rounded-2xl shadow-md max-w-xs text-left backdrop-blur-sm">
-                <img src="universal.58e2a972 (1).png" alt="General icon" class="w-12 h-12 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center my-10 px-4">
+            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+                <img src="universal.58e2a972 (1).png" alt="General icon" class="w-10 h-10 mb-4">
                 <h3 class="text-blue-500 text-xl font-bold mb-2">General</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    You can use a HoYoverse Account to play games on any mobile device, tablet, or computer.
+                    Use a HoYoverse Account to play games on any mobile device, tablet, or computer.
                 </p>
             </div>
-            <div class="bg-white/90 p-8 rounded-2xl shadow-md max-w-xs text-left backdrop-blur-sm">
-                <img src="manage.ad301a09 (1).png" alt="Manage icon" class="w-12 h-12 mb-4">
+            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+                <img src="manage.ad301a09 (1).png" alt="Manage icon" class="w-10 h-10 mb-4">
                 <h3 class="text-blue-500 text-xl font-bold mb-2">Manage</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    Manage your account here securely, such as by changing your password or linked email address.
+                    Manage your account securely, change password or linked email address.
                 </p>
             </div>
-            <div class="bg-white/90 p-8 rounded-2xl shadow-md max-w-xs text-left backdrop-blur-sm">
-                <img src="default-light.a522b00d (1).png" alt="Connect icon" class="w-12 h-12 mb-4">
+            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+                <img src="default-light.a522b00d (1).png" alt="Connect icon" class="w-10 h-10 mb-4">
                 <h3 class="text-blue-500 text-xl font-bold mb-2">Connect</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
                     Stay connected with the community, get rewards, and receive event updates.
@@ -67,59 +69,61 @@
         </div>
 
         <!-- Games Section -->
-        <div class="my-16">
+        <div class="my-16 text-center">
             <h2 class="text-2xl text-gray-800 mb-8">Our Games</h2>
-            <div class="overflow-hidden whitespace-nowrap">
-                <div class="inline-block animate-slide">
-                    <img src="HI3-logo.png" alt="Honkai Impact 3rd" class="inline-block h-10 mx-7 opacity-70 hover:opacity-100">
-                    <img src="Genshin-logo.png" alt="Genshin Impact" class="inline-block h-10 mx-7 opacity-70 hover:opacity-100">
-                    <img src="ZZZ-logo.png" alt="Zenless Zone Zero" class="inline-block h-10 mx-7 opacity-70 hover:opacity-100">
-                    <img src="Starrail-logo.png" alt="Honkai Star Rail" class="inline-block h-10 mx-7 opacity-70 hover:opacity-100">
-                    <img src="Tears-Of-Themis-logo.png" alt="Tears Of Themis" class="inline-block h-10 mx-7 opacity-70 hover:opacity-100">
+            <div class="overflow-x-auto">
+                <div class="inline-block animate-slide whitespace-nowrap">
+                    <img src="HI3-logo.png" alt="Honkai Impact 3rd" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                    <img src="Genshin-logo.png" alt="Genshin Impact" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                    <img src="ZZZ-logo.png" alt="Zenless Zone Zero" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                    <img src="Starrail-logo.png" alt="Honkai Star Rail" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                    <img src="Tears-Of-Themis-logo.png" alt="Tears Of Themis" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-5">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-6 mr-2">
-                <span class="text-sm text-gray-400">HoYoverse</span>
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Logo and Company -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-4">
+                <div class="flex items-center mb-2 sm:mb-0">
+                    <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-6 mr-2">
+                    <span class="text-sm text-gray-400">HoYoverse</span>
+                </div>
+                
+                <!-- Language Selector -->
+                <div class="relative mb-2 sm:mb-0">
+                    <select class="bg-gray-800 text-white text-sm px-3 py-1 rounded-md appearance-none">
+                        <option value="en">English</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Links -->
-            <div class="flex gap-6 text-sm flex-col lg:flex-row">
-                <a href="#" class="text-gray-400 hover:text-white">About</a>
-                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white">Help Center</a>
-                <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
-                <a href="#" class="text-gray-400 hover:text-white">Cookie Preferences</a>
-                <a href="https://fti.unai.edu/" class="text-gray-400 hover:text-white">FTI UNAI</a>
-                <a href="https://unai.edu/" class="text-gray-400 hover:text-white">UNAI</a>
-                <a href="#" class="text-gray-400 hover:text-white">Telka</a>
-            </div>
-
-            <!-- Language Selector -->
-            <div class="relative">
-                <select class="bg-gray-800 text-white text-sm px-3 py-1 rounded-md appearance-none">
-                    <option value="en">English</option>
-                    <option value="id">Bahasa Indonesia</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                </select>
+            <div class="flex flex-wrap justify-center gap-4 text-center">
+                <a href="#" class="text-gray-400 hover:text-white text-sm">About</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Help Center</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Preferences</a>
+                <a href="https://fti.unai.edu/" class="text-gray-400 hover:text-white text-sm">FTI UNAI</a>
+                <a href="https://unai.edu/" class="text-gray-400 hover:text-white text-sm">UNAI</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Telka</a>
             </div>
         </div>
     </footer>
 
     <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-black/50 hidden backdrop-blur-md z-50">
-        <div class="bg-white max-w-md mx-auto my-10 p-6 rounded-2xl shadow-lg relative">
-            <span id="closeModal" class="absolute right-5 top-4 text-gray-600 text-2xl cursor-pointer">&times;</span>
+    <div id="modal" class="fixed inset-0 bg-black/50 hidden backdrop-blur-md z-50 overflow-y-auto">
+        <div class="bg-white max-w-md w-full mx-4 sm:mx-auto my-10 p-6 rounded-2xl shadow-lg relative">
+            <span id="closeModal" class="absolute right-4 top-4 text-gray-600 text-2xl cursor-pointer">&times;</span>
             <div class="text-center mb-6">
-                <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-8 mb-4">
+                <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-8 mx-auto mb-4">
                 <h3 class="text-gray-800 text-xl font-medium">Log In to Your Account</h3>
             </div>
             <div class="mb-4">
@@ -128,17 +132,17 @@
             <div class="mb-4">
                 <input type="password" placeholder="Password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500">
             </div>
-            <button class="w-full px-4 py-3 bg-blue-500 text-white rounded-lg font-medium">Log In</button>
+            <button class="w-full px-4 py-3 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">Log In</button>
             <div class="mt-5 text-center">
                 <p class="text-gray-600">Or login with:</p>
                 <div class="flex justify-center gap-4 mt-3">
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100 cursor-pointer">
                         <img src="Google-icon.webp" alt="Google" class="w-5 h-5">
                     </div>
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100 cursor-pointer">
                         <img src="logo-facebookpng-32202.png" alt="Facebook" class="w-5 h-5">
                     </div>
-                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-300 hover:bg-gray-100 cursor-pointer">
                         <img src="png-apple-logo-9708.png" alt="Apple" class="w-5 h-5">
                     </div>
                 </div>
