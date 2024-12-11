@@ -7,8 +7,34 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto p-6">
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md w-full fixed top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-blue-700 text-2xl font-bold">MySite</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">About</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-700 font-medium">Posts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer to Avoid Content Overlap with Fixed Navbar -->
+    <div class="h-16"></div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6 flex-grow">
         <h1 class="text-4xl font-bold text-center mb-6 text-blue-700">Fetched Posts</h1>
         
         <!-- Loading Indicator -->
@@ -17,6 +43,11 @@
         <!-- Posts Container -->
         <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-10">
+        <p class="text-sm">&copy; 2024 MySite. All rights reserved.</p>
+    </footer>
 
     <script>
         // Fetch API to retrieve data
