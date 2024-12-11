@@ -3,72 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API Example</title>
+    <title>Posts Page</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-    <!-- Container Utama -->
-    <div class="container mx-auto mt-10 p-5">
-        <h1 class="text-3xl font-bold text-center text-blue-600 mb-5">Fetch Data API Example</h1>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center mb-6 text-blue-700">Fetched Posts</h1>
         
-        <!-- Loader -->
-        <div id="loader" class="text-center">
-            <p class="text-gray-500">Loading...</p>
-        </div>
-
-        <!-- Data Card -->
-        <div id="data-container" class="hidden bg-white p-5 rounded-lg shadow-lg">
-            <h2 id="post-title" class="text-2xl font-semibold text-gray-800 mb-3"></h2>
-            <p id="post-body" class="text-gray-600 mb-5"></p>
-            <div>
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                    Post ID: <span id="post-id"></span>
-                </span>
-            </div>
-        </div>
-
-        <!-- Error Message -->
-        <div id="error" class="hidden text-center text-red-500 font-semibold">
-            Failed to fetch data. Please try again later.
-        </div>
+        <!-- Loading Indicator -->
+        <div id="loading" class="text-center text-gray-600">Loading...</div>
+        
+        <!-- Posts Container -->
+        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const postId = 12; // Gantilah dengan dua digit terakhir NIM Anda
-            const apiUrl = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+        // Fetch API to retrieve data
+        const fetchPosts = async () => {
+            const url = 'https://jsonplaceholder.typicode.com/posts/18'; // Replace '18' with your NIM digits
+            const loading = document.getElementById('loading');
+            const postsContainer = document.getElementById('posts-container');
 
-            const loader = document.getElementById("loader");
-            const dataContainer = document.getElementById("data-container");
-            const errorContainer = document.getElementById("error");
+            try {
+                // Fetch data from the API
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                
+                // Parse the JSON data
+                const post = await response.json();
+                
+                // Clear the loading indicator
+                loading.style.display = 'none';
 
-            // Fetch data dari API
-            fetch(apiUrl)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok");
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    // Sembunyikan loader
-                    loader.classList.add("hidden");
+                // Create a post card
+                const postCard = `
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Post ID: ${post.id}</h2>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">${post.title}</h3>
+                        <p class="text-gray-700">${post.body}</p>
+                    </div>
+                `;
+                
+                // Append the card to the container
+                postsContainer.innerHTML = postCard;
+            } catch (error) {
+                // Show error message
+                loading.innerText = `Error: ${error.message}`;
+            }
+        };
 
-                    // Tampilkan data
-                    document.getElementById("post-id").innerText = data.id;
-                    document.getElementById("post-title").innerText = data.title;
-                    document.getElementById("post-body").innerText = data.body;
-
-                    // Tampilkan container data
-                    dataContainer.classList.remove("hidden");
-                })
-                .catch((error) => {
-                    console.error("Fetch error:", error);
-                    loader.classList.add("hidden");
-                    errorContainer.classList.remove("hidden");
-                });
-        });
+        // Call the function on page load
+        window.onload = fetchPosts;
     </script>
 </body>
 </html>
