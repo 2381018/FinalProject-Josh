@@ -21,104 +21,142 @@
 </head>
 <body class="min-h-screen flex flex-col bg-gradient-to-br from-white via-blue-100 to-purple-100 font-sans">
 
-    <!-- Container -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <!-- Header Navigation Links -->
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-8 my-4 text-center">
-            <a href="biodata.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Biodata</a>
-            <a href="contact_us.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Contact Us</a>
-            <a href="posts.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Additional Page</a>
-            <a href="freepage.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Free Content</a>
-        </div>
+ <!-- Container -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <!-- Header Navigation Links -->
+    <div class="flex flex-wrap justify-center gap-4 sm:gap-8 my-4 text-center">
+        <a href="biodata.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Biodata</a>
+        <a href="contact_us.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Contact Us</a>
+        <a href="posts.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Additional Page</a>
+        <a href="freepage.html" class="text-blue-500 hover:text-blue-700 font-medium text-sm sm:text-base">Free Content</a>
+    </div>
 
-        <!-- Title Section -->
-        <div class="my-8 text-center">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800">
-                One <span class="text-blue-500">Account</span> for all
-            </h1>
-            <p class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800 mt-2">your HoYoverse needs</p>
-        </div>
+    <!-- Title Section -->
+    <div class="my-8 text-center">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800">
+            One <span class="text-blue-500">Account</span> for all
+        </h1>
+        <p class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800 mt-2">your HoYoverse needs</p>
+    </div>
 
-        <!-- Log In Button -->
-        <div class="flex justify-center my-5">
-            <button id="openModal" class="bg-blue-500 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-600 transition-colors">Log In →</button>
-        </div>
+    <!-- Log In Button -->
+    <div class="flex justify-center my-5">
+        <button id="openModal" class="bg-blue-500 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-600 transition-colors">Log In →</button>
+    </div>
 
-        <!-- Features Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 px-4">
-            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
-                <img src="universal.58e2a972 (1).png" alt="General icon" class="w-10 h-10 mb-4">
-                <h3 class="text-blue-500 text-xl font-bold mb-2">General</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Use a HoYoverse Account to play games on any mobile device, tablet, or computer.
-                </p>
-            </div>
-            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
-                <img src="manage.ad301a09 (1).png" alt="Manage icon" class="w-10 h-10 mb-4">
-                <h3 class="text-blue-500 text-xl font-bold mb-2">Manage</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Manage your account securely, change password or linked email address.
-                </p>
-            </div>
-            <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
-                <img src="default-light.a522b00d (1).png" alt="Connect icon" class="w-10 h-10 mb-4">
-                <h3 class="text-blue-500 text-xl font-bold mb-2">Connect</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Stay connected with the community, get rewards, and receive event updates.
-                </p>
-            </div>
+    <!-- Features Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 px-4">
+        <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+            <img src="universal.58e2a972 (1).png" alt="General icon" class="w-10 h-10 mb-4">
+            <h3 class="text-blue-500 text-xl font-bold mb-2">General</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Use a HoYoverse Account to play games on any mobile device, tablet, or computer.
+            </p>
         </div>
-
-        <!-- Games Section -->
-        <div class="my-16 text-center">
-            <h2 class="text-2xl text-gray-800 mb-8">Our Games</h2>
-            <div class="overflow-x-auto">
-                <div class="inline-block animate-slide whitespace-nowrap">
-                    <img src="HI3-logo.png" alt="Honkai Impact 3rd" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
-                    <img src="Genshin-logo.png" alt="Genshin Impact" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
-                    <img src="Zenless Zone Zero.png" alt="Zenless Zone Zero" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
-                    <img src="Starrail-logo.png" alt="Honkai Star Rail" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
-                    <img src="Tears-Of-Themis-logo.png" alt="Tears Of Themis" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
-                </div>
-            </div>
+        <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+            <img src="manage.ad301a09 (1).png" alt="Manage icon" class="w-10 h-10 mb-4">
+            <h3 class="text-blue-500 text-xl font-bold mb-2">Manage</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Manage your account securely, change password or linked email address.
+            </p>
+        </div>
+        <div class="bg-white/90 p-6 rounded-2xl shadow-md text-left backdrop-blur-sm">
+            <img src="default-light.a522b00d (1).png" alt="Connect icon" class="w-10 h-10 mb-4">
+            <h3 class="text-blue-500 text-xl font-bold mb-2">Connect</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Stay connected with the community, get rewards, and receive event updates.
+            </p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-6 mt-20">
-        <div class="flex flex-wrap justify-center gap-4 text-center">
-            <a href="#" class="text-gray-400 hover:text-white text-sm">About</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Help Center</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Preferences</a>
-            <a href="https://fti.unai.edu/" class="text-gray-400 hover:text-white text-sm">FTI UNAI</a>
-            <a href="https://unai.edu/" class="text-gray-400 hover:text-white text-sm">UNAI</a>
-            <a href="https://jurnal.unai.edu/index.php/teika" class="text-gray-400 hover:text-white text-sm">Telka</a>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-black/50 hidden backdrop-blur-md z-50">
-        <div class="bg-white max-w-md w-full mx-4 sm:mx-auto my-10 p-6 rounded-2xl shadow-lg relative">
-            <span id="closeModal" class="absolute right-4 top-4 text-gray-600 text-2xl cursor-pointer">&times;</span>
-            <div class="text-center mb-6">
-                <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-8 mx-auto mb-4">
-                <h3 class="text-gray-800 text-xl font-medium">Log In to Your Account</h3>
+    <!-- Games Section -->
+    <div class="my-16 text-center">
+        <h2 class="text-2xl text-gray-800 mb-8">Our Games</h2>
+        <div class="overflow-x-auto">
+            <div class="inline-block animate-slide whitespace-nowrap">
+                <img src="HI3-logo.png" alt="Honkai Impact 3rd" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                <img src="Genshin-logo.png" alt="Genshin Impact" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                <img src="Zenless Zone Zero.png" alt="Zenless Zone Zero" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                <img src="Starrail-logo.png" alt="Honkai Star Rail" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
+                <img src="Tears-Of-Themis-logo.png" alt="Tears Of Themis" class="inline-block h-8 sm:h-10 mx-4 sm:mx-7 opacity-70 hover:opacity-100">
             </div>
-            <input type="email" placeholder="Email Address" class="w-full mb-4 px-4 py-3 border rounded-lg">
-            <input type="password" placeholder="Password" class="w-full mb-4 px-4 py-3 border rounded-lg">
-            <button class="w-full bg-blue-500 text-white py-3 rounded-lg">Log In</button>
         </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById('openModal').addEventListener('click', () => {
-            document.getElementById('modal').classList.remove('hidden');
-        });
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('modal').classList.add('hidden');
-        });
-    </script>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-6 mt-20">
+    <div class="flex flex-wrap justify-center gap-4 text-center">
+        <a href="#" class="text-gray-400 hover:text-white text-sm">About</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm">Help Center</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Preferences</a>
+        <a href="https://fti.unai.edu/" class="text-gray-400 hover:text-white text-sm">FTI UNAI</a>
+        <a href="https://unai.edu/" class="text-gray-400 hover:text-white text-sm">UNAI</a>
+        <a href="https://jurnal.unai.edu/index.php/teika" class="text-gray-400 hover:text-white text-sm">Telka</a>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 bg-black/50 hidden backdrop-blur-md z-50">
+    <div class="bg-white max-w-md w-full mx-4 sm:mx-auto my-10 p-6 rounded-2xl shadow-lg relative">
+        <!-- Close Button -->
+        <span id="closeModal" class="absolute right-4 top-4 text-gray-600 text-2xl cursor-pointer">&times;</span>
+        <div class="text-center mb-6">
+            <img src="hoyoverse.png" alt="HoYoverse Logo" class="h-8 mx-auto mb-4">
+            <h3 class="text-gray-800 text-xl font-medium">Log In to Your Account</h3>
+        </div>
+        <div class="space-y-4">
+            <!-- Username/Email -->
+            <div>
+                <label class="block text-gray-600 text-sm mb-1" for="email">Username/Email</label>
+                <input type="email" id="email" placeholder="example@mail.com" 
+                    class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <!-- Password -->
+            <div>
+                <label class="block text-gray-600 text-sm mb-1" for="password">Password</label>
+                <input type="password" id="password" placeholder="********" 
+                    class="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
+        <button class="w-full bg-gray-300 text-gray-600 font-medium py-2 rounded-lg mt-4 cursor-not-allowed" disabled>
+            Log In
+        </button>
+        <!-- Help Links -->
+        <div class="flex justify-between text-sm text-blue-500 mt-4">
+            <a href="#" class="hover:underline">Having Problems?</a>
+            <a href="#" class="hover:underline">Register Now</a>
+        </div>
+        <!-- Divider -->
+        <div class="flex items-center my-6">
+            <hr class="flex-grow border-gray-300">
+            <span class="px-2 text-gray-400 text-sm">More Login Methods</span>
+            <hr class="flex-grow border-gray-300">
+        </div>
+        <!-- Social Media Buttons -->
+        <div class="flex justify-center gap-6">
+            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full shadow-md hover:bg-gray-200">
+                <img src="Google-icon.webp" alt="Google" class="h-6">
+            </a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full shadow-md hover:bg-gray-200">
+                <img src="logo-facebookpng-32202.png" alt="Facebook" class="h-6">
+            </a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full shadow-md hover:bg-gray-200">
+                <img src="png-apple-logo-9708.png" alt="Apple" class="h-6">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('openModal').addEventListener('click', () => {
+        document.getElementById('modal').classList.remove('hidden');
+    });
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('modal').classList.add('hidden');
+    });
+</script>
 </body>
 </html>
